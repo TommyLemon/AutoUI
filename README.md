@@ -3,7 +3,7 @@
 </h1>
  
 <p align="center">📱 AI 零代码快准稳 UI 自动化测试平台 🚀</p>
-<p align="center">🚀 3 像素内自动精准定位，2 毫秒内自动精准等待，自动断言 UI 和数据、分析 bug 属于前端还是后端，一键导出场景接口用例</p>
+<p align="center">🚀 3 像素内自动精准定位，2 毫秒内自动精准等待，自动断言 UI 和数据、分配前/后端 bug，一键导出场景接口用例</p>
 <p align="center" >
   <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin"><img src="https://img.shields.io/badge/Admin-Java1.8%2B-brightgreen.svg?style=flat"></a>
   <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android"><img src="https://img.shields.io/badge/App-Android26%2B-brightgreen.svg?style=flat"></a>
