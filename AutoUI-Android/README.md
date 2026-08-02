@@ -25,11 +25,11 @@
 <br />
 
 <p align="center" >
-<img width="720" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
+<img width="720" src="https://github.com/TommyLemon/UIGO/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
 </p>
 
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
 
 ## UIGO - 📱 零代码快准稳 UI 智能录制回放 🚀 
 **3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳！**<br />
@@ -91,19 +91,19 @@ https://github.com/TommyLemon/APIAuto/issues/61#issuecomment-1997047600
 
 #### 早期零代码单机录制不同分辨率双机同时回放视频
 https://www.bilibili.com/video/BV1CK4218788 <br />
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/3bb97384-72d9-4b45-ab2c-b0916291ef9f" href="https://www.bilibili.com/video/BV1CK4218788" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/3bb97384-72d9-4b45-ab2c-b0916291ef9f" href="https://www.bilibili.com/video/BV1CK4218788" />
 
 #### 早期管理端网页工具零代码远程控制手机录制回放视频
 https://www.bilibili.com/video/BV1wA4m137ha
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/e50d00a1-22e8-4908-9d88-579a178965f1" href="https://www.bilibili.com/video/BV1wA4m137ha" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/e50d00a1-22e8-4908-9d88-579a178965f1" href="https://www.bilibili.com/video/BV1wA4m137ha" />
 
 #### 早期仿微信朋友圈复杂 App 录制回放，弹窗、输入、网页、滑动、点击等
 https://www.bilibili.com/video/BV1fH4y1E7gD
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/bed421fa-f1a9-47ea-a265-e34853b2d1c8" href="https://www.bilibili.com/video/BV1fH4y1E7gD" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/bed421fa-f1a9-47ea-a265-e34853b2d1c8" href="https://www.bilibili.com/video/BV1fH4y1E7gD" />
 
 #### 零代码录制回放 H5 移动端网页输入、滑动、点击等操作
 https://www.bilibili.com/video/BV1TK421C7y4
-<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/5c29bec6-2e21-4230-907c-f4ccb1faa4ef" href="https://www.bilibili.com/video/BV1TK421C7y4" />
+<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/5c29bec6-2e21-4230-907c-f4ccb1faa4ef" href="https://www.bilibili.com/video/BV1TK421C7y4" />
 
 
 ### 录制用例
