@@ -18,7 +18,8 @@
 </p>
 
 <p align="center" >
-<img width="1280" height="720" alt="AutoUI-testcases" src="https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7" />
+<img width="1280" src="https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7" />
+<img width="1280" src="https://github.com/user-attachments/assets/0736e696-ea65-4263-b3e3-520c5241ba86" />
 <img width="720" src="https://github.com/TommyLemon/UIGO/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
@@ -74,8 +75,8 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
-[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
 
 #### 安装 App 必须授权 显示悬浮窗、读写文件存储 这两个权限
 其它申请的权限也尽可能都勾选授权，如果不能提前授权，则在使用时弹出是否申请权限弹窗后再确认授权 <br />
