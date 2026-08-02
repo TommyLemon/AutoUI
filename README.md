@@ -13,7 +13,7 @@
   <a href="https://deepwiki.com/TommyLemon/AutoUI">English</a>
   <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
   <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
-  <a href="http://apijson.cn/au">在线工具</a>
+  <a href="http://apijson.cn/au">测试用例</a>
   <a href="https://deepwiki.com/TommyLemon/AutoUI">AI 问答</a>
 </p>
 
