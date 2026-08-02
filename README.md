@@ -18,7 +18,7 @@
 </p>
 
 <p align="center" >
-<img width="1280" height="675" alt="AutoUI-testcases" src="https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7" />
+<img width="1280" height="720" alt="AutoUI-testcases" src="https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7" />
 <img width="720" src="https://github.com/TommyLemon/UIGO/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
