@@ -1,5 +1,5 @@
 <h1 align="center" style="text-align:center;">
-  AutoUI-Android(原名 UIGO)
+  AutoUI-Android(AndroidX 增强版 UIGO)
 </h1>
  
 <p align="center">📱 零代码快准稳 UI 智能录制回放 🚀</p>
