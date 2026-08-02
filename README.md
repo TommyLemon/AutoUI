@@ -18,21 +18,15 @@
 </p>
 
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/TommyLemon/UIGO/master/logo.png" />
-</p>
-
----
-<br />
-
-<p align="center" >
+<img width="1280" height="675" alt="AutoUI-testcases" src="https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7" />
 <img width="720" src="https://github.com/TommyLemon/UIGO/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
-</p>
-
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
+</p>
 
-## UIGO - 📱 零代码快准稳 UI 智能录制回放 🚀 
-**3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳！**<br />
+## AutoUI - 📱 AI 零代码快准稳 UI 自动化测试平台 🚀 
+**3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳，**<br />
+**自动断言 UI 和数据、分析 bug 属于前端还是后端，一键导出场景接口用例！**<br />
 适用于 一次录制到处回放、反复回归界面操作、App UI/功能 自动化测试、<br />
 帮助开发快速复现和排查 bug、方便判断 bug 原因出在前端还是后端 等，<br />
 **大量减少耗时费力又无聊的重复手工操作，大幅提高手工和自动化测试效率，**<br />
@@ -53,24 +47,24 @@
 * **可自动和手动选择 View 及触摸区域、贴靠方式等**
 * 可保存录制步骤相关数据到后端数据库及从后端下载
 * 可用管理端网页浏览检索用例和远程控制录制回放
-* 附带 UnitAuto-机器学习零代码自动化单元测试
-* 中文和英语双语文案，根据系统语言设置自动切换
+* **可自动断言 UI 和数据、分析 bug 属于前端还是后端**
+* **可一键导出场景接口用例，自动串联接口上下文依赖**
 
 ### 特点优势
 相比各种 UI 录制回放/自动化测试 的 其它平台/工具/框架：<br /><br />
 1.它们录制过程各种别扭难用反人类，甚至还需要开发/维护用例脚本、每个用例都写一大堆代码频繁部署等；<br />
-**UIGO 不需要写任何代码，录制几乎是按和人正常操作完全一样的方式，操作简单易用，录制回放快、准、稳！**<br />
+**AutoUI 不需要写任何代码，录制几乎是按和人正常操作完全一样的方式，操作简单易用，录制回放快、准、稳！**<br />
 <br />
 2.它们很难兼容各种不同宽高比分辨率屏幕，720P, 1080P 等 16:9 屏幕录制最多只能较好地在 16:9 屏幕回放，<br />即便手写代码或图像比对等也很难在列表项 View id/图标 重复控件精准定位，经常点错位置导致大量回放失败；<br />
-**UIGO 则能很好地支持 16:9, 19.5:9 等各种不同屏幕录制，然后在 720P, 1080P, 2K, 1080X2340, 1440X3200 <br />等各种 不同机型、不同系统、不同屏幕 基本都能很好地精准回放，偏差基本仅在相当于一根头发丝的 3 像素内！**<br />
+**AutoUI 则能很好地支持 16:9, 19.5:9 等各种不同屏幕录制，然后在 720P, 1080P, 2K, 1080X2340, 1440X3200 <br />等各种 不同机型、不同系统、不同屏幕 基本都能很好地精准回放，偏差基本仅在相当于一根头发丝的 3 像素内！**<br />
 <br />
 3.它们要到处人为设置/调整操作步骤等待时间，还总是要么等太久、要么还没返回就过早执行下一步导致出错，<br />因为几乎无法保证网络请求在精准时间内返回，所以总是界面没加载完就滑动、弹窗没显示就点了"确定"位置等；<br />
-**UIGO 则会自动精准等待 App 发送的各种 HTTP API 网络请求，偏差基本在 2 毫秒内，比眨眼一次还要快 50 倍，<br />像专业的测试工程师一样精准高效地等待数据和 UI 都加载好并执行 点击、长按、滑动、缩放 等每一步对应操作！**<br />
+**AutoUI 则会自动精准等待 App 发送的各种 HTTP API 网络请求，偏差基本在 2 毫秒内，比眨眼一次还要快 50 倍，<br />像专业的测试工程师一样精准高效地等待数据和 UI 都加载好并执行 点击、长按、滑动、缩放 等每一步对应操作！**<br />
 <br />
 
 ### 原理说明
 被测项目不需要写任何用例脚本代码(逻辑代码、注解代码、配置代码等全都不要)，<br />
-UIGO 会自动录制 UI 触屏操作、虚拟+实体按键操作、HTTP API 网络请求与响应、<br />
+AutoUI 会自动录制 UI 触屏操作、虚拟+实体按键操作、HTTP API 网络请求与响应、<br />
 Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命周期 等，<br />
 回放时根据录制触摸点所在被分割球划分的 上、下、左、右、居中、等比 等区域<br />
 以及 屏幕分辨率、状态栏高度、导航栏高度、键盘高度 等来自动计算出回放触摸点，<br />
@@ -80,8 +74,8 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[UIGO Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
-[UIGO Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
 
 #### 安装 App 必须授权 显示悬浮窗、读写文件存储 这两个权限
 其它申请的权限也尽可能都勾选授权，如果不能提前授权，则在使用时弹出是否申请权限弹窗后再确认授权 <br />
