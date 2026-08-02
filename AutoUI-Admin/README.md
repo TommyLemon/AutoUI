@@ -21,3 +21,5 @@ http://localhost:8080
 
 右上角登录(可用已自动填充的默认帐号及密码)，按照网页提示来查看用例、录制用例、回放用例、查看断言、调整断言 等。
 ![](https://github.com/user-attachments/assets/91daf1e8-943f-40ed-bc28-b05a359e9ff7)
+![](https://github.com/user-attachments/assets/0736e696-ea65-4263-b3e3-520c5241ba86)
+
