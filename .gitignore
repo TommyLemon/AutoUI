@@ -1,0 +1,15 @@
+.DS_Store
+/.DS_Store
+*/.DS_Store
+.idea
+/.idea
+*/.idea
+build/
+/build/
+*/build/
+target/
+/target/
+*/target/
+node_modules/
+/node_modules/
+*/node_modules/
