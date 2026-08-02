@@ -1,20 +1,19 @@
 <h1 align="center" style="text-align:center;">
-  UIGO
+  AutoUI-Android(原名 UIGO)
 </h1>
  
-<p align="center">📱 零代码快准稳 UI 智能录制回放平台 🚀</p>
+<p align="center">📱 零代码快准稳 UI 智能录制回放 🚀</p>
 <p align="center">3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳！</p>
 <p align="center" >
-  <a href="https://github.com/TommyLemon/UIGO/tree/master/UIAuto-Android"><img src="https://img.shields.io/badge/Demo-Android26%2B-brightgreen.svg?style=flat"></a>
-  <a href="https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp"><img src="https://img.shields.io/badge/App-Android26%2B-brightgreen.svg?style=flat"></a>
-  <a href="https://github.com/APIJSON/APIJSON-Demo/tree/master/APIJSON-Java-Server/APIJSONBoot"><img src="https://img.shields.io/badge/Server-Java1.8%2B-brightgreen.svg?style=flat"></a>
-  <a href="https://github.com/TommyLemon/UIGO/tree/master/MySQL"><img src="https://img.shields.io/badge/MySQL-5.7%2B-brightgreen.svg?style=flat"></a>
+  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android"><img src="https://img.shields.io/badge/App-Android26%2B-brightgreen.svg?style=flat"></a>
+  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin"><img src="https://img.shields.io/badge/Admin-Java1.8%2B-brightgreen.svg?style=flat"></a>
+  <a href="https://github.com/TommyLemon/AutoUI/tree/main/MySQL"><img src="https://img.shields.io/badge/MySQL-5.7%2B-brightgreen.svg?style=flat"></a>
 </p>
 <p align="center" >
   <a href="https://deepwiki.com/TommyLemon/UIGO">English</a>
-  <a href="https://github.com/TommyLemon/UIGO#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
-  <a href="https://github.com/TommyLemon/UIGO#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
-  <a href="http://apijson.cn/ui">在线工具</a>
+  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
+  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
+  <a href="http://apijson.cn/au">在线工具</a>
   <a href="https://deepwiki.com/TommyLemon/UIGO">AI 问答</a>
 </p>
 
@@ -26,13 +25,13 @@
 <br />
 
 <p align="center" >
-<img width="720" src="https://github.com/TommyLemon/UIGO/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
+<img width="720" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/49edbcdb-2bc6-4dfb-bd30-4f9aaafe4e25" />
 </p>
 
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/54cf82d0-99b0-4085-ab89-d54ff95ef4c4" href="https://www.bilibili.com/video/BV1wA4m137ha" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/032de745-e49a-43f3-b368-84fdbd6a97d7" href="https://search.bilibili.com/all?keyword=UIGO" />
 
-## UIGO - 📱 零代码快准稳 UI 智能录制回放平台 🚀 
+## UIGO - 📱 零代码快准稳 UI 智能录制回放 🚀 
 **3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳！**<br />
 适用于 一次录制到处回放、反复回归界面操作、App UI/功能 自动化测试、<br />
 帮助开发快速复现和排查 bug、方便判断 bug 原因出在前端还是后端 等，<br />
@@ -81,8 +80,8 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[UIGO Android 简单测试 App](https://github.com/TommyLemon/UIGO/tree/master/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
-[UIGO Android 复杂客户端 App](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[UIGO Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+[UIGO Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
 
 #### 安装 App 必须授权 显示悬浮窗、读写文件存储 这两个权限
 其它申请的权限也尽可能都勾选授权，如果不能提前授权，则在使用时弹出是否申请权限弹窗后再确认授权 <br />
@@ -92,19 +91,19 @@ https://github.com/TommyLemon/APIAuto/issues/61#issuecomment-1997047600
 
 #### 早期零代码单机录制不同分辨率双机同时回放视频
 https://www.bilibili.com/video/BV1CK4218788 <br />
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/3bb97384-72d9-4b45-ab2c-b0916291ef9f" href="https://www.bilibili.com/video/BV1CK4218788" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/3bb97384-72d9-4b45-ab2c-b0916291ef9f" href="https://www.bilibili.com/video/BV1CK4218788" />
 
 #### 早期管理端网页工具零代码远程控制手机录制回放视频
 https://www.bilibili.com/video/BV1wA4m137ha
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/e50d00a1-22e8-4908-9d88-579a178965f1" href="https://www.bilibili.com/video/BV1wA4m137ha" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/e50d00a1-22e8-4908-9d88-579a178965f1" href="https://www.bilibili.com/video/BV1wA4m137ha" />
 
 #### 早期仿微信朋友圈复杂 App 录制回放，弹窗、输入、网页、滑动、点击等
 https://www.bilibili.com/video/BV1fH4y1E7gD
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/bed421fa-f1a9-47ea-a265-e34853b2d1c8" href="https://www.bilibili.com/video/BV1fH4y1E7gD" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/bed421fa-f1a9-47ea-a265-e34853b2d1c8" href="https://www.bilibili.com/video/BV1fH4y1E7gD" />
 
 #### 零代码录制回放 H5 移动端网页输入、滑动、点击等操作
 https://www.bilibili.com/video/BV1TK421C7y4
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/5c29bec6-2e21-4230-907c-f4ccb1faa4ef" href="https://www.bilibili.com/video/BV1TK421C7y4" />
+<img width="1280" src="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/assets/5738175/5c29bec6-2e21-4230-907c-f4ccb1faa4ef" href="https://www.bilibili.com/video/BV1TK421C7y4" />
 
 
 ### 录制用例
@@ -164,11 +163,11 @@ UIGO 会对有 id 的被触控 View 在回放时进行微调触控位置(不改�
 
 #### 集成到被测项目 Android 客户端 App
 ##### 1.依赖 UnitAuto-Apk
-把 [UnitAuto-Apk](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/UIGO/tree/master/UIAuto-Android)，[settings.gradle](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/settings.gradle) 中
+把 [UnitAuto-Apk](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)，[settings.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/settings.gradle) 中
 ```groovy
 include ':UnitAuto-Apk'
 ```
-[app moudule 目录](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/app/build.gradle) 中
+[app moudule 目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app/build.gradle) 中
 ```groovy
 dependencies {
     api project(':UnitAuto-Apk')
@@ -177,11 +176,11 @@ dependencies {
 <br />
 
 ##### 2.依赖 UIAuto
-把 [UIAuto](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/UIAuto) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp)，[settings.gradle](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/settings.gradle) 中
+把 [UIAuto](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/UIAuto) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)，[settings.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/settings.gradle) 中
 ```groovy
 include ':UIAuto'
 ```
-[app moudule 目录](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/UIGO/tree/master/APIJSONApp/app/build.gradle) 中
+[app moudule 目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app/build.gradle) 中
 ```groovy
 dependencies {
     api project(':UIAuto')
@@ -190,7 +189,7 @@ dependencies {
 <br />
 
 ##### 2.初始化 UIAuto
-在 [Application onCreate 方法](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apijson/demo/application/DemoApplication.java) 中初始化
+在 [Application onCreate 方法](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/application/DemoApplication.java) 中初始化
 ```java
     @Override
     public void onCreate() {
@@ -202,7 +201,7 @@ dependencies {
 <br />
 
 ##### 3.提供 UIAuto 管理界面入口
-在 [AndroidManifest.xml](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/AndroidManifest.xml) 中注册 [UIAutoActivity](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
+在 [AndroidManifest.xml](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/AndroidManifest.xml) 中注册 [UIAutoActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
 ```xml
 <manifest ... >
     <application ... >
@@ -243,15 +242,15 @@ dependencies {
         android:textAllCaps="false"
         />
 ```
-参考 [layout/main_tab_activity](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/res/layout/main_tab_activity.xml) <br />
+参考 [layout/main_tab_activity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/res/layout/main_tab_activity.xml) <br />
 <br />
-点击这个入口跳转到 [UIAutoActivity](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
+点击这个入口跳转到 [UIAutoActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
 ```java
     public void onClickUI(View v) {
         startActivity(UIAutoActivity.createIntent(this));
     }
 ```
-参考 [MainTabActivity](https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apijson/demo/activity_fragment/MainTabActivity.java) <br />
+参考 [MainTabActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/activity_fragment/MainTabActivity.java) <br />
 <br />
 
 ##### 4.通知 HTTP API 请求与相应
@@ -267,7 +266,7 @@ dependencies {
 		});
 ```
 参考：<br />
-https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L137-L147
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L137-L147
 
 
 在 HTTP API 响应结果处加上
@@ -282,7 +281,7 @@ https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apij
 		});
 ```
 参考：<br />
-https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L168-L179
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L168-L179
 
 <br />
 
@@ -476,17 +475,19 @@ https://github.com/TommyLemon/UIGO/blob/master/APIJSONApp/app/src/main/java/apij
 #### Java 后端 Server
 可先跳过，使用 http://apijson.cn:8080 或 http://apijson.cn:9090 代替 <br />
 
-见 APIJSON-Demo 后端上手 <br />
-https://github.com/APIJSON/APIJSON-Demo?tab=readme-ov-file#1%E5%90%8E%E7%AB%AF%E4%B8%8A%E6%89%8B
+具体见：
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
 
 #### 管理后台
-APIJSONBoot-MultiDataSource 内置静态网页中的 au(适合 UIGO、UIGOX) 或 ui(适合 UIGO) 目录： <br />
-https://github.com/APIJSON/APIJSON-Demo/tree/master/APIJSON-Java-Server/APIJSONBoot-MultiDataSource/src/main/resources/static
+可先跳过，http://apijson.cn/au 或 http://apijson.cn:8080/au/index.html 代替 <br />
+
+具体见：
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
 
 <br />
 
 ### 录制、回放用例
-见以上 [录制用例](https://github.com/TommyLemon/UIGO/tree/master?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](https://github.com/TommyLemon/UIGO/tree/master?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
+见以上 [录制用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
 
 <br /><br />
 
@@ -516,8 +517,6 @@ https://github.com/TommyLemon/APIAuto/issues
 
 ### 生态项目
 
-[UIGO](https://github.com/TommyLemon/UIGO) 📱 零代码快准稳 UI 智能录制回放平台 🚀 3 像素内自动精准定位，2 毫秒内自动精准等待，用户包含腾讯，微信团队邀请分享
-
 [APIJSON](https://github.com/Tencent/APIJSON) 🏆 腾讯实时 零代码、全功能、强安全 ORM 库 🚀 后端接口和文档零代码，前端(客户端) 定制返回 JSON 的数据和结构
 
 [APIAuto](https://github.com/TommyLemon/APIAuto) ☔ 敏捷开发最强大易用的接口工具，零代码测试与 AI 问答、生成代码与静态检查、生成文档与光标悬浮注释，腾讯、华为、SHEIN、传音、工行等使用
@@ -530,13 +529,9 @@ https://github.com/TommyLemon/APIAuto/issues
 
 [Android-ZBLibrary](https://github.com/TommyLemon/Android-ZBLibrary) Android MVP 快速开发框架，Demo 全面，注释详细，使用简单，代码严谨
 
-
-### 持续更新
-https://github.com/TommyLemon/UIGO/commits/master
-
 ### 我要赞赏
 UIGO 从私有仓库默默开发了 3 年多到现在终于开源了，Apache 证书对商用和非商用都很友好。<br />
 创作不易、坚持更难，右上角点亮 ⭐ Star 支持/收藏下本项目吧，谢谢 ^_^ <br />
-https://github.com/TommyLemon/UIGO
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android
 <br />
 <br />
