@@ -3165,7 +3165,7 @@ var JSONResponse = {
         // var cfg2 = ''
         var paths2 = {}
         var v2 = key.length >= 3 ? v[key] : undefined
-        if (typeof v2 != 'undefined' && ! v2 instanceof Object) {
+        if (typeof v2 != 'undefined' && ! (v2 instanceof Object)) {
           var ccp = isFolderEmpty ? key : cp + '/' + key
           var uri = '"' + ccp + '", null' + sfx
           if (inLinkPaths == null || inLinkPaths[uri] == null) {
