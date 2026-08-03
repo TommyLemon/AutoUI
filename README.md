@@ -76,7 +76,10 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 
 ### 示例项目
 [AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+
 [AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+
+更多见 [Releases 中 Assets](https://github.com/TommyLemon/UIGO/releases)
 
 #### 安装 App 必须授权 显示悬浮窗、读写文件存储 这两个权限
 其它申请的权限也尽可能都勾选授权，如果不能提前授权，则在使用时弹出是否申请权限弹窗后再确认授权 <br />
