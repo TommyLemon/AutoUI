@@ -80,8 +80,11 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[UIGO Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIAuto.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
-[UIGO Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/releases/download/0.9.0/UIGO-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+
+[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+
+更多见 [Releases 中 Assets](https://github.com/TommyLemon/UIGO/releases)
 
 #### 安装 App 必须授权 显示悬浮窗、读写文件存储 这两个权限
 其它申请的权限也尽可能都勾选授权，如果不能提前授权，则在使用时弹出是否申请权限弹窗后再确认授权 <br />
@@ -532,6 +535,6 @@ https://github.com/TommyLemon/APIAuto/issues
 ### 我要赞赏
 UIGO 从私有仓库默默开发了 3 年多到现在终于开源了，Apache 证书对商用和非商用都很友好。<br />
 创作不易、坚持更难，右上角点亮 ⭐ Star 支持/收藏下本项目吧，谢谢 ^_^ <br />
-https://github.com/TommyLemon/AutoUI
+https://github.com/TommyLemon/UIGO
 <br />
 <br />
