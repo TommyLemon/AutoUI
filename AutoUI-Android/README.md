@@ -11,8 +11,8 @@
 </p>
 <p align="center" >
   <a href="https://deepwiki.com/TommyLemon/UIGO">English</a>
-  <a href="/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
-  <a href="/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
+  <a href="/AutoUI-Android/README.md#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
+  <a href="/AutoUI-Android/README.md#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
   <a href="http://apijson.cn/ui">在线工具</a>
   <a href="https://deepwiki.com/TommyLemon/AutoUI">AI 问答</a>
 </p>
@@ -285,25 +285,19 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 **业务代码中如果使用了 android.app.AlertDialog，且录制回放用例涉及**，则可以换成 uigo.x.AlertDialog， <br />
 最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import android.app.AlertDialog， <br />
 然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.AlertDialog。 <br />
-如果因为用了自定义或第三方通用 Base Alert Dialog 不方便替换，则可以 extends [uigo.x.AlertDialog](/AutoUI-Android/UIGOX/src/main/java/uigo/x/AlertDialog.java) 或在里面加上： <br />
+如果因为用了自定义或第三方通用 BaseAlertDialog 不方便替换，则可以 extends [uigo.x.AlertDialog](/AutoUI-Android/UIGOX/src/main/java/uigo/x/AlertDialog.java)  <br />
+或复制这个类里面代码，合并到对应自定义或第三方通用 BaseAlertDialog： <br />
 
 ```java
 	@Override
 	public void show() {
 		super.show();
-		UIAutoApp.getInstance().onUIAutoDialogShow(this); // 通知已显示
+		UIAutoApp.getInstance().onUIAutoDialogShow(this);
 	}
 
-	// 拦截隐藏事件监听
-	private OnDismissListener listener;
-	@Override
-	public void setOnDismissListener(OnDismissListener listener) {
-		this.listener = listener;
-	}
-
-	private Activity context;
+//	private Activity context;
 	private void init(Context ctx) {
-		this.context = (Activity) ctx;
+//		this.context = (Activity) ctx;
 
 		super.setOnDismissListener(new OnDismissListener() {
 			@Override
@@ -312,12 +306,17 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 					listener.onDismiss(dialog);
 				}
 
-				UIAutoApp.getInstance().onUIAutoDialogDismiss(Dialog.this); // 通知已隐藏
+				UIAutoApp.getInstance().onUIAutoDialogDismiss(AlertDialog.this);
 			}
 		});
 	}
 
-	// 每个可重写的构造方法都保证调用到 init 方法
+	private OnDismissListener listener;
+	@Override
+	public void setOnDismissListener(OnDismissListener listener) {
+		this.listener = listener;
+	}
+
 	public AlertDialog(Context context) {
 		super(context);
 		init(context);
@@ -333,6 +332,54 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 		init(context);
 	}
 
+	public static class Builder extends android.app.AlertDialog.Builder {
+
+		public Builder(Context context) {
+			super(context);
+		}
+
+		public Builder(Context context, int themeResId) {
+			super(context, themeResId);
+		}
+
+        // FIXME 中间代码已省略 ...
+
+		public AlertDialog create() {
+			// Context has already been wrapped with the appropriate theme.
+			AlertDialog dialog = new AlertDialog(getContext());
+			dialog.setTitle(mTitle);
+			dialog.setMessage(mMessage);
+
+			if (mViewLayoutResId > 0) {
+				dialog.setContentView(mViewLayoutResId);
+			}
+			if (mView != null) {
+				dialog.setContentView(mView);
+			}
+
+			dialog.setButton(BUTTON_POSITIVE, mPositiveButtonText, mPositiveButtonListener);
+			dialog.setButton(BUTTON_NEGATIVE, mNegativeButtonText, mNegativeButtonListener);
+			dialog.setButton(BUTTON_NEUTRAL, mNeutralButtonText, mNeutralButtonListener);
+
+			dialog.setCancelable(mCancelable);
+			if (mCancelable) {
+				dialog.setCanceledOnTouchOutside(true);
+			}
+			dialog.setOnCancelListener(mOnCancelListener);
+			dialog.setOnDismissListener(mOnDismissListener);
+			if (mOnKeyListener != null) {
+				dialog.setOnKeyListener(mOnKeyListener);
+			}
+			return dialog;
+		}
+
+		public AlertDialog show() {
+			AlertDialog dialog = create();
+			dialog.show();
+			return dialog;
+		}
+	}
+
 ```
 
 **所有 Dialog, DatePickerDialog, TimePickerDialog, ProgressDialog, CharacterPickerDialog, MaterialStyledDatePickerDialog 等也同上处理。** <br />
@@ -342,25 +389,26 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 **业务代码中如果使用了 android.widget.PopupWindow，且录制回放用例涉及**，则可以换成 uigo.x.PopupWindow， <br />
 最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import android.widget.PopupWindow， <br />
 然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.PopupWindow。 <br />
-如果因为用了自定义或第三方通用 Base Popup Window 不方便替换，则可以 extends [uigo.x.PopupWindow](/AutoUI-Android/UIGOX/src/main/java/uigo/x/PopupWindow.java) 或在里面加上： <br />
+如果因为用了自定义或第三方通用 BasePopupWindow 不方便替换，则可以 extends [uigo.x.PopupWindow](/AutoUI-Android/UIGOX/src/main/java/uigo/x/PopupWindow.java)  <br />
+或复制这个类里面代码，合并到对应自定义或第三方通用 BasePopupWindow： <br />
 
 ```java
     private android.widget.PopupWindow popupWindow;
     private View view;
-
-    @Override
-    public void showAsDropDown(View anchor, int xoff, int yoff, int gravity) {
-        super.showAsDropDown(anchor, xoff, yoff, gravity);
-
+    public void onUIAutoPopupWindowShow() {
         if (view == null) {
             try {
                 Field field = android.widget.ListPopupWindow.class.getDeclaredField("mPopup");
                 field.setAccessible(true);
                 popupWindow = (android.widget.PopupWindow) field.get(this);
-                //  popupWindow.setOutsideTouchable(false);
+//                popupWindow.setOutsideTouchable(false);
 
                 Field dvField = android.widget.PopupWindow.class.getDeclaredField("mDecorView");
                 dvField.setAccessible(true);
+                if (popupWindow == null) {
+                    popupWindow = this;
+                }
+
                 view = (View) dvField.get(popupWindow);
 
                 if (view == null) {
@@ -378,19 +426,34 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
         }
 
         Window w = getWindow();
+        UIAutoApp.getInstance().onUIAutoPopupWindowShow(popupWindow, view, w, context, null);
+    }
 
-        // 通知已显示
-        UIAutoApp app = UIAutoApp.getInstance();
-        app.onUIAutoWindowCreate(w.getCallback(), w);
-        app.setCurrentPopupWindow(popupWindow, view, null, context, null);
+    public void onUIAutoPopupWindowDismiss() {
+        Window w = getWindow();
+        UIAutoApp.getInstance().onUIAutoPopupWindowDismiss(popupWindow, view, w, context, null);
     }
 
 
-    // 拦截隐藏事件监听
-    private android.widget.PopupWindow.OnDismissListener listener;
     @Override
-    public void setOnDismissListener(android.widget.PopupWindow.OnDismissListener listener) {
-        this.listener = listener;
+    public void showAtLocation(View parent, int gravity, int x, int y) {
+        super.showAtLocation(parent, gravity, x, y);
+        onUIAutoPopupWindowShow();
+    }
+    @Override
+    public void showAsDropDown(View anchor) {
+        super.showAsDropDown(anchor);
+        onUIAutoPopupWindowShow();
+    }
+    @Override
+    public void showAsDropDown(View anchor, int xoff, int yoff) {
+        super.showAsDropDown(anchor, xoff, yoff);
+        onUIAutoPopupWindowShow();
+    }
+    @Override
+    public void showAsDropDown(View anchor, int xoff, int yoff, int gravity) {
+        super.showAsDropDown(anchor, xoff, yoff, gravity);
+        onUIAutoPopupWindowShow();
     }
 
     public Window getWindow() {
@@ -405,34 +468,32 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
     private void init(Context ctx) {
         this.context = (Activity) ctx;
 
-        super.setOnDismissListener(new android.widget.PopupWindow.OnDismissListener() {
+        super.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss() {
                 if (listener != null) {
                     listener.onDismiss();
                 }
 
-                Window w = getWindow();
-
-                // 通知已隐藏
-                UIAutoApp app = UIAutoApp.getInstance();
-                app.onUIAutoWindowDestroy(w.getCallback(), w);
-                app.setCurrentPopupWindow(null, null, null, context, null);
+                onUIAutoPopupWindowDismiss();
             }
         });
     }
 
-    // 每个可重写的构造方法都保证调用到 init 方法
+    private OnDismissListener listener;
+    @Override
+    public void setOnDismissListener(OnDismissListener listener) {
+        this.listener = listener;
+    }
+
     public PopupWindow(Context context) {
         super(context);
         init(context);
     }
-
     public PopupWindow(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
-
     public PopupWindow(Context context, AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
@@ -442,22 +503,18 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }
-
     public PopupWindow(Context context, View contentView) {
         super(contentView);
         init(context);
     }
-
     public PopupWindow(Context context, int width, int height) {
         super(width, height);
         init(context);
     }
-
     public PopupWindow(Context context, View contentView, int width, int height) {
         super(contentView, width, height);
         init(context);
     }
-
     public PopupWindow(Context context, View contentView, int width, int height, boolean focusable) {
         super(contentView, width, height, focusable);
         init(context);
@@ -472,7 +529,8 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 **业务代码中如果使用了 androidx.fragment.app.DialogFragment，且录制回放用例涉及**，则可以换成 uigo.x.DialogFragment， <br />
 最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import androidx.fragment.app.DialogFragment， <br />
 然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.DialogFragment。 <br />
-如果因为用了自定义或第三方通用 Base DialogFragment 不方便替换，则可以 extends [uigo.x.DialogFragment](/AutoUI-Android/UIGOX/src/main/java/uigo/x/DialogFragment) 或在里面加上： <br />
+如果因为用了自定义或第三方通用 BaseDialogFragment 不方便替换，则可以 extends [uigo.x.DialogFragment](/AutoUI-Android/UIGOX/src/main/java/uigo/x/DialogFragment.java)  <br />
+或复制这个类里面代码，合并到对应自定义或第三方通用 BaseDialogFragment： <br />
 
 ```java
     public void onUIAutoDialogShow() {
@@ -556,46 +614,11 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
         onUIAutoDialogDismiss();
     }
 
-    /**
-     * Constructor used by the default {@link FragmentFactory}. You must
-     * {@link FragmentManager#setFragmentFactory(FragmentFactory) set a custom FragmentFactory}
-     * if you want to use a non-default constructor to ensure that your constructor
-     * is called when the fragment is re-instantiated.
-     *
-     * <p>It is strongly recommended to supply arguments with {@link #setArguments}
-     * and later retrieved by the Fragment with {@link #getArguments}. These arguments
-     * are automatically saved and restored alongside the Fragment.
-     *
-     * <p>Applications should generally not implement a constructor. Prefer
-     * {@link #onAttach(Context)} instead. It is the first place application code can run where
-     * the fragment is ready to be used - the point where the fragment is actually associated with
-     * its context.
-     */
+
     public DialogFragment() {
         super();
     }
 
-    /**
-     * Alternate constructor that can be called from your default, no argument constructor to
-     * provide a default layout that will be inflated by
-     * {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
-     *
-     * <pre class="prettyprint">
-     * class MyDialogFragment extends DialogFragment {
-     *   public MyDialogFragment() {
-     *     super(R.layout.dialog_fragment_main);
-     *   }
-     * }
-     * </pre>
-     *
-     * You must
-     * {@link FragmentManager#setFragmentFactory(FragmentFactory) set a custom FragmentFactory}
-     * if you want to use a non-default constructor to ensure that your constructor is called
-     * when the fragment is re-instantiated.
-     *
-     * @see #DialogFragment()
-     * @see #onCreateView(LayoutInflater, ViewGroup, Bundle)
-     */
     public DialogFragment(@LayoutRes int contentLayoutId) {
         super(contentLayoutId);
     }
@@ -622,7 +645,7 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
 <br />
 
 ### 录制、回放用例
-见以上 [录制用例](/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
+见以上 [录制用例](/AutoUI-Android/README.md#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](/AutoUI-Android/README.md#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
 
 <br /><br />
 
@@ -643,7 +666,7 @@ https://github.com/TommyLemon/APIAuto/issues
 ### 技术交流
 ##### 关于作者
 [https://github.com/TommyLemon](https://github.com/TommyLemon)<br />
-<img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/ec77df98-ff9b-43aa-b2f1-2fce2549d276">
+![](https://github.com/user-attachments/assets/cef2bd45-b20d-469e-8781-1d647cf0477f)
 
 如果有什么问题或建议可以 [去 APIAuto 提 issue](https://github.com/TommyLemon/APIAuto/issues)，交流技术，分享经验。<br >
 如果你解决了某些 bug，或者新增了一些功能，欢迎 [提 PR 贡献代码](https://github.com/APIJSON/APIJSON/blob/master/CONTRIBUTING.md)，感激不尽。
