@@ -165,34 +165,27 @@ UIGO 会对有 id 的被触控 View 在回放时进行微调触控位置(不改�
 可先跳过这个步骤，先下载体验 App 安装包，安装后 按以下 录制用例、回放用例 文档来操作
 
 #### 集成到被测项目 Android 客户端 App
-##### 1.依赖 UnitAuto-Apk
-把 [UnitAuto-Apk](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)，[settings.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/settings.gradle) 中
+##### 1.依赖 UIGOX
+把 [UIGOX](/AutoUI-Android/UIGOX)、[UnitAuto-Apk](/AutoUI-Android/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](/AutoUI-Android)，[settings.gradle.kts](/AutoUI-Android/APIJSONApp/settings.gradle) 中
 ```groovy
-include ':UnitAuto-Apk'
+include(":UnitAuto-Apk") // UIGOX 依赖 UnitAuto-Apk
+include(":UnitAuto-Apk-NOOP") // UIGOX-NOOP 依赖 UnitAuto-Apk-NOOP
+include(":UIGOX")
+include(":UIGOX-NOOP")
 ```
-[app moudule 目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app/build.gradle) 中
+[app moudule 目录](/AutoUI-Android/app)，[build.gradle.kts](/AutoUI-Android/APIJSONApp/app/build.gradle) 中
 ```groovy
 dependencies {
-    api project(':UnitAuto-Apk')
+    debugApi(project(":UnitAuto-Apk")) // 只有 DEBUG 包有零代码单元测试功能
+    releaseApi(project(":UnitAuto-Apk-NOOP")) // Release 包排除 UnitAuto-Apk 相关代码逻辑来避免可能的安全隐患
+    debugApi(project(":UIGOX")) // 只有 DEBUG 包有录制回放功能
+    releaseApi(project(":UIGOX-NOOP")) // Release 包排除 UIGOX 相关代码逻辑来避免可能的安全隐患
 }
 ```
 <br />
 
-##### 2.依赖 UIAuto
-把 [UIAuto](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/UIAuto) 导入到你项目 [app moudule 所在目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)，[settings.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/settings.gradle) 中
-```groovy
-include ':UIAuto'
-```
-[app moudule 目录](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app)，[build.gradle](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp/app/build.gradle) 中
-```groovy
-dependencies {
-    api project(':UIAuto')
-}
-```
-<br />
-
-##### 2.初始化 UIAuto
-在 [Application onCreate 方法](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/application/DemoApplication.java) 中初始化
+##### 2.初始化 UIGOX
+在 [Application onCreate 方法](/AutoUI-Android/app/src/main/java/uigox/demo/application/DemoApplication.java) 中初始化
 ```java
     @Override
     public void onCreate() {
@@ -204,7 +197,7 @@ dependencies {
 <br />
 
 ##### 3.提供 UIAuto 管理界面入口
-在 [AndroidManifest.xml](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/AndroidManifest.xml) 中注册 [UIAutoActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
+在 [AndroidManifest.xml](/AutoUI-Android/app/src/main/AndroidManifest.xml) 中注册 [UIAutoActivity](/AutoUI-Android/UIGOX/src/main/java/uiauto/UIAutoActivity.java)
 ```xml
 <manifest ... >
     <application ... >
@@ -245,15 +238,15 @@ dependencies {
         android:textAllCaps="false"
         />
 ```
-参考 [layout/main_tab_activity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/res/layout/main_tab_activity.xml) <br />
+参考 [layout/main_tab_activity](/AutoUI-Android/app/src/main/res/layout/main_tab_activity.xml) <br />
 <br />
-点击这个入口跳转到 [UIAutoActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/UIAuto/src/main/java/uiauto/UIAutoActivity.java)
+点击这个入口跳转到 [UIAutoActivity](/AutoUI-Android/UIGOX/src/main/java/uiauto/UIAutoActivity.java)
 ```java
     public void onClickUI(View v) {
         startActivity(UIAutoActivity.createIntent(this));
     }
 ```
-参考 [MainTabActivity](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/activity_fragment/MainTabActivity.java) <br />
+参考 [MainTabActivity](/AutoUI-Android/app/src/main/java/apijson/demo/activity_fragment/MainTabActivity.java) <br />
 <br />
 
 ##### 4.通知 HTTP API 请求与相应
@@ -269,7 +262,7 @@ dependencies {
 		});
 ```
 参考：<br />
-https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L137-L147
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/apijson/demo/manager/HttpManager.java#L137-L147
 
 
 在 HTTP API 响应结果处加上
@@ -284,7 +277,7 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSO
 		});
 ```
 参考：<br />
-https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/blob/master/APIJSONApp/app/src/main/java/apijson/demo/manager/HttpManager.java#L168-L179
+https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/apijson/demo/manager/HttpManager.java#L168-L179
 
 <br />
 
@@ -490,7 +483,7 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
 <br />
 
 ### 录制、回放用例
-见以上 [录制用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
+见以上 [录制用例](/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
 
 <br /><br />
 
@@ -514,13 +507,13 @@ https://github.com/TommyLemon/APIAuto/issues
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/ec77df98-ff9b-43aa-b2f1-2fce2549d276">
 
 如果有什么问题或建议可以 [去 APIAuto 提 issue](https://github.com/TommyLemon/APIAuto/issues)，交流技术，分享经验。<br >
-如果你解决了某些 bug，或者新增了一些功能，欢迎 [提 PR 贡献代码](https://github.com/Tencent/APIJSON/blob/master/CONTRIBUTING.md)，感激不尽。
+如果你解决了某些 bug，或者新增了一些功能，欢迎 [提 PR 贡献代码](https://github.com/APIJSON/APIJSON/blob/master/CONTRIBUTING.md)，感激不尽。
 <br />
 <br />
 
 ### 生态项目
 
-[APIJSON](https://github.com/Tencent/APIJSON) 🏆 腾讯实时 零代码、全功能、强安全 ORM 库 🚀 后端接口和文档零代码，前端(客户端) 定制返回 JSON 的数据和结构
+[APIJSON](https://github.com/APIJSON/APIJSON) 🏆 实时 零代码、全功能、强安全 ORM 库 🚀 后端接口和文档零代码，前端(客户端) 定制返回 JSON 的数据和结构
 
 [APIAuto](https://github.com/TommyLemon/APIAuto) ☔ 敏捷开发最强大易用的接口工具，零代码测试与 AI 问答、生成代码与静态检查、生成文档与光标悬浮注释，腾讯、华为、SHEIN、传音、工行等使用
 
