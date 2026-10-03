@@ -5,16 +5,16 @@
 <p align="center">📱 零代码快准稳 UI 智能录制回放 🚀</p>
 <p align="center">3 像素内自动精准定位，2 毫秒内自动精准等待，录制回放快、准、稳！</p>
 <p align="center" >
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android"><img src="https://img.shields.io/badge/App-Android26%2B-brightgreen.svg?style=flat"></a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin"><img src="https://img.shields.io/badge/Admin-Java1.8%2B-brightgreen.svg?style=flat"></a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/MySQL"><img src="https://img.shields.io/badge/MySQL-5.7%2B-brightgreen.svg?style=flat"></a>
+  <a href="/AutoUI-Android"><img src="https://img.shields.io/badge/App-Android26%2B-brightgreen.svg?style=flat"></a>
+  <a href="/AutoUI-Admin"><img src="https://img.shields.io/badge/Admin-Java1.8%2B-brightgreen.svg?style=flat"></a>
+  <a href="/MySQL"><img src="https://img.shields.io/badge/MySQL-5.7%2B-brightgreen.svg?style=flat"></a>
 </p>
 <p align="center" >
   <a href="https://deepwiki.com/TommyLemon/UIGO">English</a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
-  <a href="http://apijson.cn/au">在线工具</a>
-  <a href="https://deepwiki.com/TommyLemon/UIGO">AI 问答</a>
+  <a href="/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
+  <a href="/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
+  <a href="http://apijson.cn/ui">在线工具</a>
+  <a href="https://deepwiki.com/TommyLemon/AutoUI">AI 问答</a>
 </p>
 
 <p align="center" >
@@ -80,9 +80,9 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+[AutoUI Android 简单测试 App](https://github.com/TommyLemon/UIGO/tree/master/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
 
-[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[AutoUI Android 复杂客户端 App](/AutoUI-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
 
 更多见 [Releases 中 Assets](https://github.com/TommyLemon/UIGO/releases)
 
@@ -165,7 +165,7 @@ UIGO 会对有 id 的被触控 View 在回放时进行微调触控位置(不改�
 可先跳过这个步骤，先下载体验 App 安装包，安装后 按以下 录制用例、回放用例 文档来操作
 
 #### 集成到被测项目 Android 客户端 App
-##### 1.依赖 UIGOX
+##### 1.依赖 UIGO
 把 [UIGOX](/AutoUI-Android/UIGOX)、[UnitAuto-Apk](/AutoUI-Android/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](/AutoUI-Android)，[settings.gradle.kts](/AutoUI-Android/settings.gradle.kts) 中
 ```groovy
 include(":UnitAuto-Apk") // UIGOX 依赖 UnitAuto-Apk
@@ -184,7 +184,7 @@ dependencies {
 ```
 <br />
 
-##### 2.初始化 UIGOX
+##### 2.初始化 UIGO
 在 [Application onCreate 方法](/AutoUI-Android/app/src/main/java/uigox/demo/application/DemoApplication.java) 中初始化
 ```java
     @Override
@@ -196,7 +196,7 @@ dependencies {
 ```
 <br />
 
-##### 3.提供 UIAuto 管理界面入口
+##### 3.提供 UIGO 管理界面入口
 在 [AndroidManifest.xml](/AutoUI-Android/app/src/main/AndroidManifest.xml) 中注册 [UIAutoActivity](/AutoUI-Android/UIGOX/src/main/java/uiauto/UIAutoActivity.java)
 ```xml
 <manifest ... >
@@ -204,21 +204,21 @@ dependencies {
       
         <activity
             android:name="uiauto.UIAutoActivity"
-            android:label="@string/ui"
+            android:label="UI"
             android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             />
         <activity
             android:name="uiauto.UIAutoListActivity"
-            android:label="@string/ui"
+            android:label="UI"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name="unitauto.apk.UnitAutoActivity"
-            android:label="@string/unit"
+            android:label="Unit"
             android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="userLandscape"
@@ -282,10 +282,10 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 <br />
 
 ##### 5.通知 Dialog, PopupWindow 显示和隐藏
-**业务代码中如果使用了 android.app.AlertDialog，且录制回放用例涉及**，则可以换成 uiauto.AlertDialog， <br />
+**业务代码中如果使用了 android.app.AlertDialog，且录制回放用例涉及**，则可以换成 uigo.x.AlertDialog， <br />
 最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import android.app.AlertDialog， <br />
-然后点搜索弹窗右下角 Replace All 按钮批量改为 import uiauto.AlertDialog。 <br />
-如果因为用了自定义或第三方通用 Base Alert Dialog 不方便替换，则可以 extends uiauto.AlertDialog 或在里面加上：
+然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.AlertDialog。 <br />
+如果因为用了自定义或第三方通用 Base Alert Dialog 不方便替换，则可以 extends [uigo.x.AlertDialog](/AutoUI-Android/UIGOX/src/main/java/uigo/x/AlertDialog.java) 或在里面加上： <br />
 
 ```java
 	@Override
@@ -335,14 +335,14 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 
 ```
 
-**所有 Dialog, DatePickerDialog, TimePickerDialog, ProgressDialog, CharacterPickerDialog 等也同上处理。** <br />
+**所有 Dialog, DatePickerDialog, TimePickerDialog, ProgressDialog, CharacterPickerDialog, MaterialStyledDatePickerDialog 等也同上处理。** <br />
 
 <br />
 
-**业务代码中如果使用了 android.widget.PopupWindow，且录制回放用例涉及**，则可以换成 uiauto.PopupWindow， <br />
+**业务代码中如果使用了 android.widget.PopupWindow，且录制回放用例涉及**，则可以换成 uigo.x.PopupWindow， <br />
 最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import android.widget.PopupWindow， <br />
-然后点搜索弹窗右下角 Replace All 按钮批量改为 import uiauto.PopupWindow。 <br />
-如果因为用了自定义或第三方通用 Base Popup Window 不方便替换，则可以 extends uiauto.PopupWindow 或在里面加上：
+然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.PopupWindow。 <br />
+如果因为用了自定义或第三方通用 Base Popup Window 不方便替换，则可以 extends [uigo.x.PopupWindow](/AutoUI-Android/UIGOX/src/main/java/uigo/x/PopupWindow.java) 或在里面加上： <br />
 
 ```java
     private android.widget.PopupWindow popupWindow;
@@ -466,6 +466,145 @@ https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/app/src/main/java/
 ```
 
 **所有 ListPopupWindow 等也同上处理。** <br />
+
+<br />
+
+**业务代码中如果使用了 androidx.fragment.app.DialogFragment，且录制回放用例涉及**，则可以换成 uigo.x.DialogFragment， <br />
+最简单的方式是顶部菜单 Edit > Find > Replace in files 全局搜索 import androidx.fragment.app.DialogFragment， <br />
+然后点搜索弹窗右下角 Replace All 按钮批量改为 import uigo.x.DialogFragment。 <br />
+如果因为用了自定义或第三方通用 Base DialogFragment 不方便替换，则可以 extends [uigo.x.DialogFragment](/AutoUI-Android/UIGOX/src/main/java/uigo/x/DialogFragment) 或在里面加上： <br />
+
+```java
+    public void onUIAutoDialogShow() {
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            UIAutoApp.getInstance().onUIAutoDialogShow(dialog);
+        }
+    }
+
+    public void onUIAutoDialogDismiss() {
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            UIAutoApp.getInstance().onUIAutoDialogDismiss(dialog);
+        }
+    }
+
+    @Override
+    public void show(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.show(manager, tag);
+        onUIAutoDialogShow();
+    }
+
+    @Override
+    public int show(@NonNull FragmentTransaction transaction, @Nullable String tag) {
+        int backStackId = super.show(transaction, tag);
+        onUIAutoDialogShow();
+        return backStackId;
+    }
+
+    @Override
+    public void showNow(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.showNow(manager, tag);
+        onUIAutoDialogShow();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        onUIAutoDialogShow();
+    }
+
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void dismissNow() {
+        super.dismissNow();
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void dismissAllowingStateLoss() {
+        super.dismissAllowingStateLoss();
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        onUIAutoDialogDismiss();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        onUIAutoDialogDismiss();
+    }
+
+    /**
+     * Constructor used by the default {@link FragmentFactory}. You must
+     * {@link FragmentManager#setFragmentFactory(FragmentFactory) set a custom FragmentFactory}
+     * if you want to use a non-default constructor to ensure that your constructor
+     * is called when the fragment is re-instantiated.
+     *
+     * <p>It is strongly recommended to supply arguments with {@link #setArguments}
+     * and later retrieved by the Fragment with {@link #getArguments}. These arguments
+     * are automatically saved and restored alongside the Fragment.
+     *
+     * <p>Applications should generally not implement a constructor. Prefer
+     * {@link #onAttach(Context)} instead. It is the first place application code can run where
+     * the fragment is ready to be used - the point where the fragment is actually associated with
+     * its context.
+     */
+    public DialogFragment() {
+        super();
+    }
+
+    /**
+     * Alternate constructor that can be called from your default, no argument constructor to
+     * provide a default layout that will be inflated by
+     * {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
+     *
+     * <pre class="prettyprint">
+     * class MyDialogFragment extends DialogFragment {
+     *   public MyDialogFragment() {
+     *     super(R.layout.dialog_fragment_main);
+     *   }
+     * }
+     * </pre>
+     *
+     * You must
+     * {@link FragmentManager#setFragmentFactory(FragmentFactory) set a custom FragmentFactory}
+     * if you want to use a non-default constructor to ensure that your constructor is called
+     * when the fragment is re-instantiated.
+     *
+     * @see #DialogFragment()
+     * @see #onCreateView(LayoutInflater, ViewGroup, Bundle)
+     */
+    public DialogFragment(@LayoutRes int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
+```
+
+**所有 AppCompatDialogFragment, BottomSheetDialogFragment, MaterialDatePicker 等也同上处理。** <br />
+<br />
+
 <br />
 
 #### Java 后端 Server
