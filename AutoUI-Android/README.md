@@ -166,14 +166,14 @@ UIGO 会对有 id 的被触控 View 在回放时进行微调触控位置(不改�
 
 #### 集成到被测项目 Android 客户端 App
 ##### 1.依赖 UIGOX
-把 [UIGOX](/AutoUI-Android/UIGOX)、[UnitAuto-Apk](/AutoUI-Android/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](/AutoUI-Android)，[settings.gradle.kts](/AutoUI-Android/APIJSONApp/settings.gradle) 中
+把 [UIGOX](/AutoUI-Android/UIGOX)、[UnitAuto-Apk](/AutoUI-Android/UnitAuto-Apk) 导入到你项目 [app moudule 所在目录](/AutoUI-Android)，[settings.gradle.kts](/AutoUI-Android/settings.gradle.kts) 中
 ```groovy
 include(":UnitAuto-Apk") // UIGOX 依赖 UnitAuto-Apk
 include(":UnitAuto-Apk-NOOP") // UIGOX-NOOP 依赖 UnitAuto-Apk-NOOP
 include(":UIGOX")
 include(":UIGOX-NOOP")
 ```
-[app moudule 目录](/AutoUI-Android/app)，[build.gradle.kts](/AutoUI-Android/APIJSONApp/app/build.gradle) 中
+[app moudule 目录](/AutoUI-Android/app)，[build.gradle.kts](/AutoUI-Android/app/build.gradle.kts) 中
 ```groovy
 dependencies {
     debugApi(project(":UnitAuto-Apk")) // 只有 DEBUG 包有零代码单元测试功能
