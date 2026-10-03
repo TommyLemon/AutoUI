@@ -63,8 +63,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import dalvik.system.DexFile;
 import unitauto.MethodUtil;
@@ -632,25 +634,25 @@ public class UnitAutoApp extends Application {
 		return this;
 	}
 
-	private JSONObject loginCallback;
-	public JSONObject getLoginCallback() {
+	private Map<String, Object> loginCallback;
+	public Map<String, Object> getLoginCallback() {
         if (loginCallback == null) {
-            loginCallback = new JSONObject(true);
+            loginCallback = new LinkedHashMap<>();
         }
 
-        if (StringUtil.isEmpty(loginCallback.getString(KEY_TYPE), true)) {
+        if (StringUtil.isEmpty(loginCallback.get(KEY_TYPE), true)) {
             loginCallback.put(KEY_TYPE, getInterfaceClass().getName());
         }
 
 		// value <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        JSONObject value = loginCallback.getJSONObject(KEY_VALUE);
+		Map<String, Object> value = (Map<String, Object>) loginCallback.get(KEY_VALUE);
 		if (value == null) {
-            value = new JSONObject(true);
+            value = new LinkedHashMap<>();
         }
 
 		// complete(T) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		String sign = getCallbackSign();
-		JSONObject callback = value.getJSONObject(sign);
+		Map<String, Object> callback = (Map<String, Object>) value.get(sign);
 		if (callback == null) {
 			callback = new JSONObject(true);
 		}
@@ -666,20 +668,20 @@ public class UnitAutoApp extends Application {
 
         return loginCallback;
     }
-	public JSONObject getLoginCallback(JSONObject callback) {
+	public Map<String, Object> getLoginCallback(Map<String, Object> callback) {
 		loginCallback = getLoginCallback();
 		if (callback != null && ! callback.isEmpty()) {
 			loginCallback.putAll(callback);
 		}
 		return loginCallback;
 	}
-	public UnitAutoApp setLoginCallback(JSONObject loginCallback) {
+	public UnitAutoApp setLoginCallback(Map<String, Object> loginCallback) {
 		this.loginCallback = loginCallback;
 		return this;
 	}
 
-	private JSONObject loginInvokeReq = null;
-	public JSONObject getLoginInvokeReq() {
+	private Map<String, Object> loginInvokeReq = null;
+	public Map<String, Object> getLoginInvokeReq() {
 		if (loginInvokeReq == null) {
 			Class<?> clazz = getLoginPageClass();
 			String clsName = clazz == null ? null : clazz.getName();
@@ -709,7 +711,7 @@ public class UnitAutoApp extends Application {
 				methodArgs.add("123456");
 
 				{   // methodArgs[3] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-					JSONObject methodArgsItem = getLoginCallback();
+					Map<String, Object> methodArgsItem = getLoginCallback();
 					methodArgs.add(methodArgsItem);
 				}   // methodArgs[3] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -728,40 +730,40 @@ public class UnitAutoApp extends Application {
 	public static final String KEY_PASSWORD = "password";
 	public static final String KEY_VERIFY = "verify";
 	public static final String KEY_CAPTCHA = "captcha";
-	public JSONObject getLogoutInvokeReq(JSONObject httpReq) {
-		JSONObject invokeReq = getLoginInvokeReq(httpReq);
-		JSONArray methodArgs = invokeReq.getJSONArray(KEY_METHOD_ARGS);
-		JSONObject callback = getLoginCallback(methodArgs.getJSONObject(callbackArgIndex));
+	public Map<String, Object> getLogoutInvokeReq(Map<String, Object> httpReq) {
+		Map<String, Object> invokeReq = getLoginInvokeReq(httpReq);
+		List<Object> methodArgs = (List<Object>) invokeReq.get(KEY_METHOD_ARGS);
+		Map<String, Object> callback = getLoginCallback((Map<String, Object>) methodArgs.get(callbackArgIndex));
 		methodArgs = new JSONArray(1);
 		methodArgs.add(callback);
 		invokeReq.put(KEY_METHOD_ARGS, methodArgs);
 		return invokeReq;
 	}
 
-	public JSONObject getLoginInvokeReq(JSONObject httpReq) {
-		JSONObject invokeReq = getLoginInvokeReq();
+	public Map<String, Object> getLoginInvokeReq(Map<String, Object> httpReq) {
+		Map<String, Object> invokeReq = getLoginInvokeReq();
 		if (httpReq != null && ! httpReq.isEmpty()) {
 			Object pkg = httpReq.remove(KEY_PACKAGE);
 			Object cls = httpReq.remove(KEY_CLASS);
 			Object mtd = httpReq.remove(KEY_METHOD);
 			invokeReq.putAll(httpReq);
-			if (StringUtil.isEmpty(invokeReq.getString(KEY_PACKAGE), true)) {
+			if (StringUtil.isEmpty(invokeReq.get(KEY_PACKAGE), true)) {
 				invokeReq.put(KEY_PACKAGE, pkg);
 			}
-			if (StringUtil.isEmpty(invokeReq.getString(KEY_CLASS), true)) {
+			if (StringUtil.isEmpty(invokeReq.get(KEY_CLASS), true)) {
 				invokeReq.put(KEY_CLASS, cls);
 			}
-			if (StringUtil.isEmpty(invokeReq.getString(KEY_METHOD), true)) {
+			if (StringUtil.isEmpty(invokeReq.get(KEY_METHOD), true)) {
 				invokeReq.put(KEY_METHOD, mtd);
 			}
 
-			String type = httpReq.getString(KEY_TYPE);
-			String account = httpReq.getString(KEY_ACCOUNT);
-			String phone = httpReq.getString(KEY_PHONE);
-			String email = httpReq.getString(KEY_EMAIL);
-			String password = httpReq.getString(KEY_PASSWORD);
-			String verify = httpReq.getString(KEY_VERIFY);
-			String captcha = httpReq.getString(KEY_CAPTCHA);
+			String type = StringUtil.getString(httpReq.get(KEY_TYPE));
+			String account = StringUtil.getString(httpReq.get(KEY_ACCOUNT));
+			String phone = StringUtil.getString(httpReq.get(KEY_PHONE));
+			String email = StringUtil.getString(httpReq.get(KEY_EMAIL));
+			String password = StringUtil.getString(httpReq.get(KEY_PASSWORD));
+			String verify = StringUtil.getString(httpReq.get(KEY_VERIFY));
+			String captcha = StringUtil.getString(httpReq.get(KEY_CAPTCHA));
 
 			if (StringUtil.isEmpty(account, true)) {
 				if (StringUtil.isPhone(phone)) {
@@ -782,7 +784,7 @@ public class UnitAutoApp extends Application {
 			int callbackArgIndex = getCallbackArgIndex();
 			int minSize = Math.max(4, callbackArgIndex + 1);
 
-			JSONArray methodArgs = invokeReq.getJSONArray(KEY_METHOD_ARGS);
+			List<Object> methodArgs = (List<Object>) invokeReq.get(KEY_METHOD_ARGS);
 			if (methodArgs == null || methodArgs.isEmpty()) {
 				methodArgs = new JSONArray(minSize);
 			} else if (methodArgs.size() < minSize) {
@@ -801,13 +803,13 @@ public class UnitAutoApp extends Application {
 				methodArgs.set(getPasswordArgIndex(), password);
 			}
 
-			JSONObject callback = getLoginCallback(methodArgs.getJSONObject(callbackArgIndex));
+			Map<String, Object> callback = getLoginCallback((Map<String, Object>) methodArgs.get(callbackArgIndex));
 			methodArgs.set(callbackArgIndex, callback);
 		}
 
 		return invokeReq;
 	}
-	public UnitAutoApp setLoginInvokeReq(JSONObject loginInvokeReq) {
+	public UnitAutoApp setLoginInvokeReq(Map<String, Object> loginInvokeReq) {
 		this.loginInvokeReq = loginInvokeReq;
 		return this;
 	}
@@ -849,13 +851,13 @@ public class UnitAutoApp extends Application {
 	}
 
 	public Object logout(JSONObject httpReq, MethodUtil.Listener<JSONObject> listener) throws Exception {
-		JSONObject invokeReq = getLogoutInvokeReq(httpReq);
+		JSONObject invokeReq = new JSONObject(getLogoutInvokeReq(httpReq));
 		MethodUtil.invokeMethod(invokeReq, null, listener);
 		return null;
 	}
 
 	public Object login(JSONObject httpReq, MethodUtil.Listener<JSONObject> listener) throws Exception {
-		JSONObject invokeReq = getLoginInvokeReq(httpReq);
+		JSONObject invokeReq = new JSONObject(getLoginInvokeReq(httpReq));
 		MethodUtil.invokeMethod(invokeReq, null, new MethodUtil.Listener<JSONObject>() {
 			@Override
 			public void complete(JSONObject data, Method method, MethodUtil.InterfaceProxy proxy, Object... extras) throws Exception {

@@ -1,0 +1,145 @@
+/*Copyright ©2025 TommyLemon(https://github.com/TommyLemon/UIGOX)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.*/
+
+package uigo.x;
+
+import android.content.res.Configuration;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class InputUtil {
+  public static final String TAG = "InputUtil";
+
+  public static final int EVENT_TYPE_TOUCH = 0;
+  public static final int EVENT_TYPE_KEY = 1;
+  public static final int EVENT_TYPE_UI = 2;
+  public static final int EVENT_TYPE_HTTP = 3;
+
+  public static final int LAYOUT_TYPE_DENSITY = 0;
+  public static final int LAYOUT_TYPE_RATIO = 1;
+  public static final int LAYOUT_TYPE_ABSOLUTE = 2;
+
+
+  public static String getTouchActionName(int action) {
+      return null;
+    }
+
+    public static String getOrientationName(int orientation) {
+        return orientation == Configuration.ORIENTATION_LANDSCAPE ? "HORIZONTAL" : "VERTICAL";
+    }
+
+    public static String getKeyActionName(int keyCode) {
+        return getTouchActionName(keyCode);
+    }
+    public static String getKeyCodeName(int keyCode) {
+        return null;
+    }
+
+    public static String getScanCodeName(int scanCode) {
+        return null;
+    }
+
+
+    public static final int HTTP_ACTION_REQUEST = 0;
+    public static final int HTTP_ACTION_RESPONSE = 1;
+    public static final int HTTP_ACTION_GET = 2;
+    public static final int HTTP_ACTION_POST = 3;
+    public static final int HTTP_ACTION_PUT = 4;
+    public static final int HTTP_ACTION_DELETE = 5;
+    public static final int HTTP_ACTION_HEAD = 6;
+    public static final int HTTP_ACTION_OPTION = 7;
+    public static final int HTTP_ACTION_TRACE = 8;
+    public static final String HTTP_ACTION_REQUEST_NAME = "REQUEST";
+    public static final String HTTP_ACTION_RESPONSE_NAME = "RESPONSE";
+    public static final String HTTP_ACTION_GET_NAME = "GET";
+    public static final String HTTP_ACTION_POST_NAME = "POST";
+    public static final String HTTP_ACTION_PUT_NAME = "PUT";
+    public static final String HTTP_ACTION_DELETE_NAME = "DELETE";
+    public static final String HTTP_ACTION_HEAD_NAME = "HEAD";
+    public static final String HTTP_ACTION_OPTION_NAME = "OPTION";
+    public static final String HTTP_ACTION_TRACE_NAME = "TRACE";
+
+    public static final String HTTP_HEADER_NAME = "HEADER";
+    public static final String HTTP_CONTENT_NAME = "CONTENT";
+
+    public static final String[] HTTP_ACTION_NAMES = new String[] {
+            HTTP_ACTION_REQUEST_NAME, HTTP_ACTION_RESPONSE_NAME, HTTP_ACTION_GET_NAME, HTTP_ACTION_POST_NAME
+            , HTTP_ACTION_PUT_NAME, HTTP_ACTION_DELETE_NAME, HTTP_ACTION_HEAD_NAME, HTTP_ACTION_OPTION_NAME
+            , HTTP_ACTION_TRACE_NAME
+    };
+    public static final List<String> HTTP_ACTION_NAME_LIST = Arrays.asList(HTTP_ACTION_NAMES);
+
+    public static int getHTTPActionCode(String action) {
+        return 0;
+    }
+    public static String getHTTPActionName(int action) {
+        return null;
+    }
+
+
+
+    public static final int UI_ACTION_ATTACH = 0;
+    public static final int UI_ACTION_CREATE = 1;
+    public static final int UI_ACTION_CREATE_VIEW = 2;
+    public static final int UI_ACTION_ACTIVITY_CREATED = 3;
+    public static final int UI_ACTION_START = 4;
+    public static final int UI_ACTION_RESUME = 5;
+    public static final int UI_ACTION_PAUSE = 6;
+    public static final int UI_ACTION_STOP = 7;
+    public static final int UI_ACTION_DESTROY_VIEW = 8;
+    public static final int UI_ACTION_DESTROY = 9;
+    public static final int UI_ACTION_DETACH = 10;
+    public static final int UI_ACTION_RESTART = 11;
+    public static final int UI_ACTION_PREATTACH = 12;
+    public static final int UI_ACTION_PRECREATE = 13;
+    public static final int UI_ACTION_RESULT = 14;
+
+    public static final String UI_ACTION_ATTACH_NAME = "ATTACH";
+    public static final String UI_ACTION_CREATE_NAME = "CREATE";
+    public static final String UI_ACTION_CREATE_VIEW_NAME = "CREATE_VIEW";
+    public static final String UI_ACTION_ACTIVITY_CREATED_NAME = "ACTIVITY_CREATED";
+    public static final String UI_ACTION_START_NAME = "START";
+    public static final String UI_ACTION_RESUME_NAME = "RESUME";
+    public static final String UI_ACTION_PAUSE_NAME = "PAUSE";
+    public static final String UI_ACTION_STOP_NAME = "STOP";
+    public static final String UI_ACTION_DESTROY_VIEW_NAME = "DESTROY_VIEW";
+    public static final String UI_ACTION_DESTROY_NAME = "DESTROY";
+    public static final String UI_ACTION_DETACH_NAME = "DETACH";
+    public static final String UI_ACTION_RESTART_NAME = "RESTART";
+    public static final String UI_ACTION_PREATTACH_NAME = "PREATTACH";
+    public static final String UI_ACTION_PRECREATE_NAME = "PRECREATE";
+    public static final String UI_ACTION_RESULT_NAME = "RESULT";
+
+    public static final String[] UI_ACTION_NAMES = new String[] {
+            UI_ACTION_ATTACH_NAME, UI_ACTION_CREATE_NAME, UI_ACTION_CREATE_VIEW_NAME, UI_ACTION_ACTIVITY_CREATED_NAME
+            , UI_ACTION_START_NAME, UI_ACTION_RESUME_NAME, UI_ACTION_PAUSE_NAME, UI_ACTION_STOP_NAME
+            , UI_ACTION_DESTROY_VIEW_NAME, UI_ACTION_DESTROY_NAME, UI_ACTION_DETACH_NAME, UI_ACTION_RESTART_NAME
+            , UI_ACTION_PREATTACH_NAME, UI_ACTION_PRECREATE_NAME, UI_ACTION_RESULT_NAME
+    };
+    public static final List<String> UI_ACTION_NAME_LIST = Arrays.asList(UI_ACTION_NAMES);
+
+    public static int getUIActionCode(String action) {
+        return 0;
+    }
+    public static String getUIActionName(int action) {
+        return null;
+    }
+
+
+    public static String getActionName(int type, int action) {
+        return null;
+    }
+
+}

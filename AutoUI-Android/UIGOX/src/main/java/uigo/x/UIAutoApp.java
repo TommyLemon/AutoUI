@@ -7929,7 +7929,7 @@ public class UIAutoApp { // extends Application {
 	    firstEventNode = currentEventNode = eventNode;
 	    step = 0;
         lastId = 0;
-	    allStep = 0;
+        allStep = 0;
 	    duration = 0;
         currentTime = startTime = System.currentTimeMillis();
 	    flowId = - currentTime;

@@ -200,7 +200,7 @@
 
         <activity
             android:name="uigo.x.UIAutoActivity"
-            android:label="@string/ui"
+            android:label="UI"
             android:windowSoftInputMode="adjustResize|adjustPan"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
@@ -209,14 +209,14 @@
 
         <activity
             android:name="uigo.x.UIAutoListActivity"
-            android:label="@string/ui"
+            android:label="UI"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name="unitauto.apk.UnitAutoActivity"
-            android:label="@string/unit"
+            android:label="Unit"
             android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="userLandscape"

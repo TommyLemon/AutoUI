@@ -27,6 +27,7 @@ import uigox.demo.manager.DataManager;
 import uigox.demo.model.User;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import androidx.annotation.NonNull;
 //import uigox.demo.BuildConfig;
@@ -73,11 +74,14 @@ public class DemoApplication extends BaseApplication {
 		uiIns.initUIAuto(this);
 		String serverAddr = SettingUtil.getCurrentServerAddress();
 		uiIns.setHttpHostList(Arrays.asList(serverAddr.endsWith("/") ? serverAddr.substring(0, serverAddr.length() - 1) : serverAddr));
-		uiIns.getSharedPreferences().edit()
-				.remove(KEY_PROJECT).putString(KEY_PROJECT, getPackageName())
-				.remove(KEY_APP_NAME).putString(KEY_APP_NAME, getAppName())
-				.remove(KEY_APP_CACHE_NAME_CONFIG_MAP).putString(KEY_APP_CACHE_NAME_CONFIG_MAP, NAME_MODE_MAP)
-				.apply();
+		SharedPreferences sp = uiIns.getSharedPreferences();
+		if (sp != null) {
+			sp.edit()
+					.remove(KEY_PROJECT).putString(KEY_PROJECT, getPackageName())
+					.remove(KEY_APP_NAME).putString(KEY_APP_NAME, getAppName())
+					.remove(KEY_APP_CACHE_NAME_CONFIG_MAP).putString(KEY_APP_CACHE_NAME_CONFIG_MAP, NAME_MODE_MAP)
+					.apply();
+		}
 
 		UnitAutoApp unitIns = UnitAutoApp.getInstance();
 		unitIns.setLoginPageClass(LoginActivity.class);
@@ -85,7 +89,7 @@ public class DemoApplication extends BaseApplication {
 		// unitIns.setInterfaceClass(HttpManager.OnHttpResponseListener.class);
 		// unitIns.setCallbackSign("onHttpResponse(int,String,Throwable)");
 
-		// JSONObject request = unitIns.getLoginInvokeReq();
+		// Map<String, Object> request = unitIns.getLoginInvokeReq();
 		// String clsName = LoginActivity.class.getName();
 		// int index = clsName.lastIndexOf(".");
 		// String pkg = clsName.substring(0, index);

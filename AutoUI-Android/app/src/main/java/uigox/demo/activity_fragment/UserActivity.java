@@ -14,6 +14,8 @@ limitations under the License.*/
 
 package uigox.demo.activity_fragment;
 
+import static com.scwang.smart.refresh.layout.util.SmartUtil.dp2px;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -47,7 +49,6 @@ import uigox.demo.util.HttpRequest;
 import uigox.demo.util.MenuUtil;
 import uigox.demo.view.UserView;
 import uigox.demo.server.model.Privacy;
-import uigo.x.DisplayUtil;
 import apijson.JSONRequest;
 import apijson.JSONResponse;
 import zuo.biao.library.base.BaseView.OnDataChangedListener;
@@ -531,7 +532,7 @@ public class UserActivity extends BaseActivity implements OnClickListener, OnBot
 			mpw.setAdapter(ada);
 			mpw.setAnchorView(findViewById(R.id.ivUserMenu));
 //			mpw.setContentWidth(ListPopupWindow.MATCH_PARENT);
-			mpw.setWidth(DisplayUtil.dp2px(context, 120));
+			mpw.setWidth(dp2px(120));
 			mpw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

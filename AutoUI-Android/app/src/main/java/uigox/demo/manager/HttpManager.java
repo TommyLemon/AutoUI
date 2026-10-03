@@ -25,9 +25,6 @@ import androidx.fragment.app.Fragment;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 
-import java.io.IOException;
-import java.net.CookieHandler;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -57,7 +54,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import uigo.x.InputUtil;
-import uigo.x.SSLUtil;
+// import uigo.x.SSLUtil;
 import uigo.x.UIAutoApp;
 import uigox.demo.application.DemoApplication;
 import zuo.biao.library.util.StringUtil;
@@ -75,13 +72,13 @@ public class HttpManager {
 	private HttpManager(Context context) {
 		this.context = context;
 
-		try {
-			socketFactory = SSLUtil.getSSLSocketFactory(context.getAssets().open("demo.cer"));
-		} catch (Exception e) {
-			Log.e(TAG, "HttpManager  try {" +
-					"  socketFactory = SSLUtil.getSSLSocketFactory(context.getAssets().open(\"demo.cer\"));\n" +
-					"\t\t} catch (Exception e) {\n" + e.getMessage());
-		}
+		// try {
+		// 	socketFactory = SSLUtil.getSSLSocketFactory(context.getAssets().open("demo.cer"));
+		// } catch (Exception e) {
+		// 	Log.e(TAG, "HttpManager  try {" +
+		// 			"  socketFactory = SSLUtil.getSSLSocketFactory(context.getAssets().open(\"demo.cer\"));\n" +
+		// 			"\t\t} catch (Exception e) {\n" + e.getMessage());
+		// }
 	}
 
 	private static HttpManager instance = null;
@@ -167,6 +164,9 @@ public class HttpManager {
 			protected Exception doInBackground(Void... params) {
 				try {
 					String url = UIAutoApp.getInstance().getHttpUrl(url_);
+					if (StringUtil.isEmpty(url)) {
+						url = url_;
+					}
 
 					String token = getToken(url);
 
@@ -284,9 +284,13 @@ public class HttpManager {
 						if (map == null) {
 							map = new HashMap<>();
 						}
-						List<String> idList = new ArrayList<String>();
-						idList.add(UIAutoApp.getInstance().getDelegateId());
-						map.put("Apijson-Delegate-Id", idList);
+
+						String did = UIAutoApp.getInstance().getDelegateId();
+						if (StringUtil.isNotEmpty(did, true)) {
+							List<String> idList = new ArrayList<String>();
+							idList.add(did);
+							map.put("Apijson-Delegate-Id", idList);
+						}
 
 						List<Cookie> list = new ArrayList<>();
 

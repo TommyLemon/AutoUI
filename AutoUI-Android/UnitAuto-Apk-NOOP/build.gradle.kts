@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "zuo.biao.library"
+    namespace = "unitauto.apk"
     compileSdk = 36
 
     defaultConfig {
@@ -25,22 +25,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    packaging {
+        resources {
+            excludes.add("**/application.properties")
+        }
+    }
 }
 
 dependencies {
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.fastjson)
-    implementation(libs.unitauto)
-    implementation(libs.androidasync)
-    implementation(libs.apijson)
-    implementation(libs.okhttp)
-    implementation(libs.glide)
-    implementation(libs.refreshlayoutkernel)
-    implementation(libs.refreshheaderclassics)
-    implementation(libs.refreshfooterclassics)
-
-//    api(project(":UIGOX-NOOP"))
-    debugApi(project(":UIGOX"))
-    releaseApi(project(":UIGOX-NOOP"))
 }

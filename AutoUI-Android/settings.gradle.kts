@@ -24,6 +24,8 @@ dependencyResolutionManagement {
 rootProject.name = "UIGOX"
 include(":app")
 include(":UnitAuto-Apk")
+include(":UnitAuto-Apk-NOOP")
 include(":floatwindow")
 include(":UIGOX")
+include(":UIGOX-NOOP")
 include(":ZBLibrary")

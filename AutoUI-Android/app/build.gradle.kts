@@ -61,7 +61,8 @@ dependencies {
     implementation(libs.refreshheaderclassics)
     implementation(libs.refreshfooterclassics)
 //    implementation(project(":UnitAuto-Apk"))
-//    implementation(project(":UIGOX"))
+//    debugImplementation(project(":UIGOX"))
+//    releaseImplementation(project(":UIGOX"))
     api(project(":ZBLibrary")) {
         exclude(group = "com.android.support")
     }
