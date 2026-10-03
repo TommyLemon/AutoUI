@@ -11,9 +11,9 @@
 </p>
 <p align="center" >
   <a href="https://deepwiki.com/TommyLemon/AutoUI">English</a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
-  <a href="https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
-  <a href="http://apijson.cn/au">测试用例</a>
+  <a href="/AutoUI-Android#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE">录制回放</a>
+  <a href="/AutoUI-Android#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
+  <a href="http://apijson.cn/ui">测试用例</a>
   <a href="https://deepwiki.com/TommyLemon/AutoUI">AI 问答</a>
 </p>
 
@@ -75,9 +75,9 @@ Activity, Fragment, Dialog, PopupWindow 等各种组件(控件)元素的生命�
 <br />
 
 ### 示例项目
-[AutoUI Android 简单测试 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
+[AutoUI Android 简单测试 App](https://github.com/TommyLemon/UIGO/tree/master/UIAuto-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-release.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）<br />
 
-[AutoUI Android 复杂客户端 App](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android/APIJSONApp)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
+[AutoUI Android 复杂客户端 App](/AutoUI-Android)    直接 [下载](https://github.com/TommyLemon/UIGO/releases/download/0.9.0/UIGOX-debug-1221.apk) （第一次可能失败，返回报错 JSON，一般重试一次就可以）
 
 更多见 [Releases 中 Assets](https://github.com/TommyLemon/UIGO/releases)
 
@@ -103,23 +103,25 @@ https://www.bilibili.com/video/BV1fH4y1E7gD
 https://www.bilibili.com/video/BV1TK421C7y4
 <img width="1280" src="https://github.com/TommyLemon/UIGO/assets/5738175/5c29bec6-2e21-4230-907c-f4ccb1faa4ef" href="https://www.bilibili.com/video/BV1TK421C7y4" />
 
+#### Android 客户端 App
+可先跳过，直接下载 [示例项目](/README.md#示例项目) 的安装包来代替 <br />
+
+具体见：[AutoUI-Android](/AutoUI-Android)
 
 #### Java 后端 Server
 可先跳过，使用 http://apijson.cn:8080 或 http://apijson.cn:9090 代替 <br />
 
-具体见：
-https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
+具体见：[AutoUI-Admin](/AutoUI-Admin)
 
 #### 管理后台
-可先跳过，http://apijson.cn/au 或 http://apijson.cn:8080/au/index.html 代替 <br />
+可先跳过，http://apijson.cn/ui 或 http://apijson.cn:8080/ui/index.html 代替 <br />
 
-具体见：
-https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Admin
+具体见：[AutoUI-Admin/src/main/resources/static](/AutoUI-Admin)
 
 <br />
 
 ### 录制、回放用例
-见以上 [录制用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](https://github.com/TommyLemon/AutoUI/tree/main/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
+见以上 [录制用例](/AutoUI-Android?tab=readme-ov-file#%E5%BD%95%E5%88%B6%E7%94%A8%E4%BE%8B)、[回放用例](/AutoUI-Android?tab=readme-ov-file#%E5%9B%9E%E6%94%BE%E7%94%A8%E4%BE%8B) 的说明。
 
 <br /><br />
 
