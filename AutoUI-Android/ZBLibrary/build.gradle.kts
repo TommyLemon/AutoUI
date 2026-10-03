@@ -40,7 +40,9 @@ dependencies {
     implementation(libs.refreshheaderclassics)
     implementation(libs.refreshfooterclassics)
 
-//    api(project(":UIGOX-NOOP"))
-    debugApi(project(":UIGOX"))
-    releaseApi(project(":UIGOX-NOOP"))
+    api(project(":UIGOX"))
+    // api(project(":UIGOX-NOOP")) // 替换上一行，方便测试 NOOP 空跑模式
+    // TODO 你的业务项目需要 删除 上面配置，取消注释 来启用 下面两行
+    // debugApi(project(":UIGOX")) // 只有 DEBUG 包有录制回放功能
+    // releaseApi(project(":UIGOX-NOOP")) // Release 包排除 UIGOX 相关代码逻辑来避免可能的安全隐患
 }

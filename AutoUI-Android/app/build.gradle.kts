@@ -60,9 +60,13 @@ dependencies {
     implementation(libs.refreshlayoutkernel)
     implementation(libs.refreshheaderclassics)
     implementation(libs.refreshfooterclassics)
-//    implementation(project(":UnitAuto-Apk"))
-//    debugImplementation(project(":UIGOX"))
-//    releaseImplementation(project(":UIGOX"))
+
+    // 已在 ZBLibrary 里依赖，这里应该不需要重复依赖，如果编译报错找不到 UIGOX/UnitAuto 相关类，则可取消注释来显式依赖
+    // debugApi(project(":UnitAuto-Apk")) // 只有 DEBUG 包有零代码单元测试功能
+    // releaseApi(project(":UnitAuto-Apk-NOOP")) // Release 包排除 UnitAuto-Apk 相关代码逻辑来避免可能的安全隐患
+    // debugApi(project(":UIGOX")) // 只有 DEBUG 包有录制回放功能
+    // releaseApi(project(":UIGOX-NOOP")) // Release 包排除 UIGOX 相关代码逻辑来避免可能的安全隐患
+
     api(project(":ZBLibrary")) {
         exclude(group = "com.android.support")
     }
